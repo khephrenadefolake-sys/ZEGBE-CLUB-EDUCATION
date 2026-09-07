@@ -2404,7 +2404,10 @@ function CoursView({ contenu }) {
       <View style={styles.retainBox}>
         <Text style={styles.retainTitle}>🧠 À RETENIR</Text>
 
-        {contenu.retenir.map((item, index) => (
+       {(Array.isArray(contenu.retenir)
+  ? contenu.retenir
+  : [contenu.retenir]
+).map((item, index) => (
           <Text key={index} style={styles.retainText}>
             • {item}
           </Text>
